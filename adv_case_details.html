@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Case Upload Form</title>
+    <link rel="stylesheet" href="../static/css/caseupload.css">
+</head>
+<body>
+
+  <div class="form-wrapper">
+    <form method="post">
+      <h1><u>CASE DETAILS</u></h1>
+
+      <label>ADVOCATE NAME</label>
+      <input type="text" name="adv_name" value="{{case[1]}}">
+
+      <label>BAR ID</label>
+      <input type="text" name="bar_id" value="{{case[2]}}">
+
+      <label>CLIENT USERNAME</label>
+      <input type="text" name="username" value="{{case[3]}}">
+
+      <label>CASE TITLE</label>
+      <input type="text" name="case_title" value="{{case[4]}}">
+
+      <label>CASE TYPE</label>
+      <input type="text" name="case_type" value="{{case[5]}}">
+
+      <label>CASE DESCRIPTION</label>
+      <input type="text" name="case_desc" value="{{case[6]}}">
+
+      <label>CASE PRIORITY</label>
+      <input type="text" name="case_priority" value="{{case[7]}}">
+
+      <label>STATUS</label>
+      <select name="status">
+        <option value="#">..SELECT..</option>
+        <option value="pending">PENDING</option>
+        <option value="ongoing">ONGOING</option>
+        <option value="closed">CLOSED</option>
+      </select>
+
+
+      <label>SUBMITTED AT</label>
+      <input type="text" name="submitted_at" value="{{case[9]}}">
+
+      <label>REVIEWED AT</label>
+      <input type="text" name="reviewed_at" value="{{case[10]}}">
+
+      <label>EVIDENCE</label>
+      <input type="text" name="evidence_url" value="{{case[11]}}">
+
+      <input type="submit" value="Update Cases">
+    </form>
+  </div>
+
+</body>
+</html>

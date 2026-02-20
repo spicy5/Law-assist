@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Client Details</title>
+  <link rel="stylesheet" href="../static/css/viewcase.css">
+
+</head>
+
+<body>
+<a href='/dashboard3' class="btn">Home</a>
+
+  <h2>Client Details</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Client Name</th>
+        <th>DOB</th>
+        <th>Phone</th>
+        <th>E-Mail</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Address</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in client %}
+      <tr>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+        <td>{{ row[4] }}</td>
+        <td>{{ row[5] }}</td>
+        <td>{{ row[6] }}</td>
+        <td>{{ row[7] }}</td>
+        <td>{{ row[8] }}</td>
+        <td>{{ row[9] }}</td>
+        <td>
+          <form action="/delete_admin_client_det/{{ row[0] }}" method="POST" style="display:inline;"><br><br>
+          <button type="submit" class="btn" style="background-color:darkred;" onclick="return confirm('Are you sure you want to remove this client?');" >REMOVE</button>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</body>
+
+</html>

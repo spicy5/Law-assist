@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Profile Update</title>
+    <link rel="stylesheet" href="../static/css/profile_update.css">
+</head>
+<body>
+
+  <div class="form-wrapper">
+    <form method="post">
+      <h1><u>PROFILE</u></h1>
+
+      <label>CLIENT NAME</label>
+      <input type="text" name="client_name" value="{{client[1]}}">
+
+      <label>DOB</label>
+      <input type="text" name="dob" value="{{client[2]}}">
+
+      <label>PHONE</label>
+      <input type="text" name="phone" value="{{client[3]}}">
+
+      <label>EMAIL ID</label>
+      <input type="text" name="email" value="{{client[4]}}">
+
+      <label>GENDER</label>
+      <input type="text" name="gender" value="{{client[5]}}">
+
+      <label>AGE</label>
+      <input type="text" name="age" value="{{client[6]}}">
+
+      <label>ADDRESS</label>
+      <input type="text" name="address" value="{{client[7]}}">
+
+      <input type="submit" value="Update Profile">
+    </form>
+  </div>
+
+</body>
+</html>

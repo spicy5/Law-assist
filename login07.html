@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Law Assist - Login</title>
+  <link rel="stylesheet" href="../static/css/login07.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Home button -->
+  <div class="home-button-container">
+  <a href="/" class="home-button">
+    <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Home" class="home-logo">
+  </a>
+  </div>
+
+  <div class="container">
+    <div class="left">
+      <h1>Welcome to Law Assist</h1>
+      <p>"Justice will not be served until those who are unaffected are as outraged as those who are." — Benjamin Franklin</p>
+    </div>
+    <div class="right">
+      <form action="/login" method="post">
+        <h2>Sign In</h2>
+        <input type="text" class="neumorphic-input" id="username" name="username" placeholder="Username" />
+        <input type="password" class="neumorphic-input" id="password" name="password" placeholder="Password" />
+        <div class="role-options">
+          <div class="role-option">
+            <input type="radio" name="usertype" id="client" value="client" checked />
+            <label for="client">Client</label>
+          </div>
+          <div class="role-option">
+            <input type="radio" name="usertype" id="advocate" value="advocate" />
+            <label for="advocate">Advocate</label>
+          </div>
+        </div>
+        <button class="neumorphic-button" type="submit">Login</button>
+        <p>Forgot password? <a href="#">Recover</a></p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

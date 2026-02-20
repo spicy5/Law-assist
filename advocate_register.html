@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="../static/css/abhijith.css">
+</head>
+<body>
+    <div class="container">
+        <form action='/advocate_register' method="post" enctype="multipart/form-data">
+            <h1 class="form-title"><u>ADVOCATE REGISTRATION</u></h1>
+            <div class="main-user-info">
+
+                <div class="user-input-info">
+                    <label for="fullname">FULL NAME</label>
+                    <input type="text" id="fullname" name="adv_name" placeholder="enter full name">
+                </div>
+                <div class="user-input-info">
+                    <label for="dob">DOB</label>
+                    <input type="date" id="dob" name="dob">
+                </div>
+
+                <div class="user-input-info">
+                    <label for="phone">PHONE NUMBER</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+91 9876543210" pattern="(\+?\d{1,3})?\s?\d{10}">
+                </div>
+
+                <div class="user-input-info">
+                    <label for="email">EMAIL ID</label>
+                    <input type="email" id="email" name="email" placeholder="example@example.com" required>
+                </div>
+
+                <div class="user-input-info">
+                    <br><label>GENDER</label>&nbsp;
+                    <div class="radio-container">
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">MALE</label>&nbsp;
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">FEMALE</label>&nbsp;
+                    </div>
+                </div>
+
+                <div class="user-input-info">
+                    <label for="age">AGE</label>
+                    <select name="age" id="age">
+                        <script>
+                            document.addEventListener('DOMContentLoaded', () => {
+                                const selectElement = document.getElementById('age');
+                        
+                                function generateOptions(start, end) {
+                                    for (let i = start; i <= end; i++) {
+                                        const option = document.createElement('option');
+                                        option.value = i;
+                                        option.textContent = i;
+                                        selectElement.appendChild(option);
+                                    }
+                                }
+                        
+                                generateOptions(18, 60);
+                            });
+                        </script>
+                    </select>
+                </div>
+
+
+                 <div class="user-input-info">
+                    <label for="barid">BAR COUNCIL ID</label>
+                    <input type='text' id="barid" name="barid"  placeholder="Enter your Bar-Id"></text>
+                </div>
+
+                 <div class="user-input-info">
+                    <label for="licnum">LICENCE NUMBER</label>
+                    <input type='text' id="licnum" name="licnum" placeholder="Enter your Licence Number"></text>
+                </div>
+
+                
+                 <div class="user-input-info">
+                    <label for="year">YEAR OF PRACTICE</label>
+                    <input type='text' id="year" name="year" placeholder="Enter The Year Of Practice"></text>
+                </div>
+
+                <div class="user-input-info">
+                    <label for="court-address">COURT ADDRESS</label>
+                    <INPUT type ="text" id="court-address" name="court_address" placeholder="Enter your court address">
+                </div>
+
+                <div class="user-input-info">
+                    <label for="practice-division">PRACTICE DIVISION</label>
+
+                        <select name="practice_division" id="practice-division" required>
+                                <option value="civil law">Civil Law</option>
+                                <option value="criminal law">Criminal Law</option>
+                                <option value="corporate & commercial law">Corporate&Commercial Law</option>
+                                <option value="ip law">IP Law</option>
+                                <option value="international law">International Law</option>
+                        </select>
+                </div>
+                
+                <div class="user-input-info">
+                    <label for="user-name">USER NAME</label>
+                    <INPUT type ="text" id="user-name" name="username" placeholder="Enter your user name">
+                </div>
+                <div class="user-input-info">
+                    <label for="password">PASSWORD</label>
+                    <INPUT type ="password" id="password" name="password" placeholder="enter your password">
+                </div>
+                <div class="user-input-info">
+
+                        <input type="hidden" name="usertype" id="usertype" value="advocate">
+                </div>
+                <div class="user-input-info">
+                    <label for="adv_photo">UPLOAD PHOTO</label>
+                    <INPUT type ="file" id="adv_photo" name="adv_photo" placeholder="Upload your photo here">
+                </div>
+
+            </div>
+            <div class="form-submit">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Law Assist</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../static/css/dash007.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-top">
+      <div class="profile">
+        <img src="#" alt="User" />
+        <div class="name"></div>
+        <div class="role"></div>
+      </div>
+
+      <div class="menu">
+        <a href="#" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="{{ url_for('edit_client_profile', id=1) }}" class="nav-link"><i class="fas fa-user"></i><span>Profile</span></a>
+
+        <div class="submenu-group">
+          <a href="#" class="nav-link"><i class="fas fa-folder"></i><span>Users</span></a>
+          <div class="submenu">
+           <a href="/admin_adv_details" class="nav-link">Advocate Details</a>
+           <a href="/admin_client_details" class="nav-link">Client Details</a>
+          </div>
+        </div>
+
+        <div class="submenu-group">
+          <a href="#" class="nav-link"><i class="fas fa-folder"></i><span>Cases</span></a>
+          <div class="submenu">
+           <a href="/admin_adv_cases" class="nav-link">Advocate Cases</a>
+           <a href="/admin_client_cases" class="nav-link">Client Case</a>
+          </div>
+        </div>
+
+
+         <div class="submenu-group">
+           <a href="#" class="nav-link"><i class="fas fa-file"></i><span>Documents</span></a>
+             <div class="submenu">
+               <a href="/admin_adv_documents" class="nav-link">Advocate Document</a>
+
+              <a href="/admin_client_documents" class="nav-link">Client Document</a>
+             </div>
+         </div>
+
+        <a href="#" class="nav-link"><i class="fas fa-cog"></i><span>Settings</span></a>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      <button class="btn" onclick="toggleDarkMode()">
+        <i class="fas fa-moon"></i>
+        <span>Dark Mode</span>
+      </button>
+      <button class="btn" >
+        <a href="/logout" class="text">
+           <i class="fas fa-sign-out-alt"></i>
+          <span>Logout</span>
+          </a>
+      </button>
+    </div>
+  </div>
+
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1>Welcome to Law Assist</h1>
+    <p>{{username}}</p>
+      {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="flash-container">
+      {% for message in messages %}
+        <div class="flash">{{ message }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+    <p>This is your professional dashboard with hover menus, liquid glass styling, and responsive layout.</p>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+
+<script>
+  setTimeout(() => {
+    const flashMessages = document.querySelectorAll('.flash');
+    flashMessages.forEach(msg => {
+      msg.style.opacity = '0';
+      setTimeout(() => msg.remove(), 500);  // Remove from DOM after fade
+    });
+  }, 2000);  // 2 seconds
+</script>
+
+
+  </script>
+</body>
+</html>

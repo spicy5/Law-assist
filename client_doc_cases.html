@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Details</title>
+  <link rel="stylesheet" href="../static/css/viewcase.css">
+
+</head>
+
+<body>
+<a href='/dashboard1' class="btn">Home</a>
+
+  <h2>Document Upload</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Client Case ID</th>
+        <th>Case Title</th>
+        <th>Case Priority</th>
+        <th>Status</th>
+        <th> action </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for case in client %}
+      <tr>
+        <td>{{ case[0] }}</td>
+        <td>{{ case[4] }}</td>
+        <td>{{ case[7] }}</td>
+        <td>{{ case[8] }}</td>
+
+        <td>
+          <a href="{{ url_for('client_doc_up', case_id=case[0]) }}" class="btn" style="background-color:red;">UPLOAD</a>
+
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Details</title>
+  <link rel="stylesheet" href="../static/css/viewcase.css">
+
+</head>
+
+<body>
+<a href='/dashboard2' class="btn">Home</a>
+
+  <h2>Case Details</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Bar ID</th>
+        <th>Client Case ID</th>
+        <th>Case Title</th>
+        <th>Case Type</th>
+        <th>Case Description</th>
+        <th>Case Priority</th>
+        <th>Status</th>
+        <th>Evidence</th>
+        <th>Accepted At</th>
+        <th> action </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in advocate %}
+      <tr>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[3] }}</td>
+        <td>{{ row[4] }}</td>
+        <td>{{ row[5] }}</td>
+        <td>{{ row[6] }}</td>
+        <td>{{ row[7] }}</td>
+        <td>{{ row[8] }}</td>
+        <td>{{ row[9] }}</td>
+        <td>{{ row[10] }}</td>
+
+        <td>
+           <a href="#" class="btn" style="background-color:red;">VIEW</a><br>
+
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</body>
+
+</html>

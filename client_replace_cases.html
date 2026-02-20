@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Replace Case Documents</title>
+  <link rel="stylesheet" href="../static/css/viewcase.css">
+</head>
+<body>
+
+<a href='/dashboard2' class="btn">Home</a>
+<h2>Document Upload - Replace Existing</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Client Case ID</th>
+      <th>Document Title</th>
+      <th>File Type</th>
+      <th>Is Confidential</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in documents %}
+  <tr>
+    <td>{{ row[2] }}</td>
+    <td>{{ row[5] }}</td>
+    <td>{{ row[7] }}</td>
+    <td>{{ row[9] }}</td>
+    <td>
+      <a href="/client_replace_doc/{{ row[0] }}" class="btn" style="background-color:red;">REPLACE</a>
+        <form action="/delete_client_document/{{ row[0] }}" method="POST" style="display:inline;">
+    <button type="submit" class="btn" style="background-color:darkred;" onclick="return confirm('Are you sure you want to delete this document?');">
+      DELETE
+    </button>
+  </form>
+    </td>
+  </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</body>
+</html>

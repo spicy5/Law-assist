@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Details</title>
+  <link rel="stylesheet" href="../static/css/viewcase.css">
+
+</head>
+
+<body>
+<a href='/dashboard2' class="btn">Home</a>
+
+  <h2>Document Upload</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Client Case ID</th>
+        <th>Case Title</th>
+        <th>Case Priority</th>
+        <th>Status</th>
+        <th> action </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in advocate %}
+      <tr>
+        <td>{{ row[3] }}</td>
+        <td>{{ row[4] }}</td>
+        <td>{{ row[7] }}</td>
+        <td>{{ row[10] }}</td>
+
+        <td>
+           <a href='/adv_doc_up/{{ row[3] }}' class="btn" style="background-color:red;">UPLOAD</a><br>
+
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</body>
+
+</html>
