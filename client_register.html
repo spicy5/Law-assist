@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="../static/css/abhijith.css">
+</head>
+<body>
+    <div class="container">
+        <form action='/register' method="post">
+            <h1 class="form-title"><u>REGISTRATION</u></h1>
+            <div class="main-user-info">
+
+                <div class="user-input-info">
+                    <label for="client_name">FULL NAME</label>
+                    <input type="text" id="client_name" name="client_name" placeholder="enter full name">
+                </div>
+                <div class="user-input-info">
+                    <label for="dob">DOB</label>
+                    <input type="date" id="dob" name="dob">
+                </div>
+
+                <div class="user-input-info">
+                    <label for="phone">PHONE NUMBER</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="user-input-info">
+                    <label for="email">EMAIL ID</label>
+                    <input type="email" id="email" name="email" placeholder="example@example.com" required>
+                </div>
+
+                <div class="user-input-info">
+                    <br><label>GENDER</label>&nbsp;
+                    <div class="radio-container">
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">MALE</label>&nbsp;
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">FEMALE</label>&nbsp;
+                    </div>
+                </div>
+
+                <div class="user-input-info">
+                    <label for="age">AGE</label>
+                    <select name="age" id="age">
+                        <script>
+                            document.addEventListener('DOMContentLoaded', () => {
+                                const selectElement = document.getElementById('age');
+                        
+                                function generateOptions(start, end) {
+                                    for (let i = start; i <= end; i++) {
+                                        const option = document.createElement('option');
+                                        option.value = i;
+                                        option.textContent = i;
+                                        selectElement.appendChild(option);
+                                    }
+                                }
+                        
+                                generateOptions(18, 60);
+                            });
+                        </script>
+                    </select>
+                </div>
+
+                <div class="user-input-info">
+                    <label for="address">ADDRESS</label>
+                    <textarea id="address" name="address" rows="5" cols="30" placeholder="Type your address..."></textarea>
+                </div>
+
+
+                <div class="user-input-info">
+                    <label for="user-name">USER NAME</label>
+                    <INPUT type ="text" id="user-name" name="username" placeholder="Enter your user name">
+                </div>
+                <div class="user-input-info">
+                    <label for="password">PASSWORD</label>
+                    <INPUT type ="password" id="password" name="password" placeholder="enter your password">
+                </div>
+                <div class="user-input-info">
+                    <label for="usertype">USER TYPE</label>
+
+                        <select name="usertype" id="usertype" required>
+                              <option value="advocate">Advocate</option>
+                                <option value="client">Client</option>
+
+                           </select>
+                </div>
+
+            </div>
+            <div class="form-submit">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

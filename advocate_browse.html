@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Advocate Directory</title>
+  <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/advocate_browse.css') }}">
+</head>
+<body>
+  <h1>Our Advocates</h1>
+
+  <div class="container">
+    {% for adv in advocates %}
+     <div class="card"
+     data-name="{{ adv[1] }}"
+     data-bar="{{ adv[2] }}"
+     data-lic="{{ adv[3] }}"
+     data-year="{{ adv[4] }}"
+     data-phone="{{ adv[5] }}"
+     data-email="{{ adv[6] }}"
+     data-address="{{ adv[7] }}"
+     data-areaexpert="{{ adv[8] }}"
+     onclick="openModal(this)">
+
+         <img src="{{ url_for('advocate_photo_by_barid', barid=adv[2]) }}"
+       alt="Advocate Photo"
+       class="advocate-photo" />
+  <div class="profile-card">
+    <div class="advocate-info">
+      <h3 class="advocate-name">{{ adv[1] }}</h3>
+      <p class="advocate-bar">Bar ID: {{ adv[2] }}</p>
+      <p class="advocate-license">License: {{ adv[3] }}</p>
+      <p class="advocate-expert">Area of Expertise: <strong> {{ adv[8] }}</strong></p>
+      <p class="advocate-year">Years of Practice: {{ adv[4] }}</p>
+      <p class="advocate-address">Court Address: {{ adv[7] }}</p>
+    </div>
+  </div>
+  <button class="book-button">Book Now</button>
+</div>
+
+    {% endfor %}
+  </div>
+
+  <div id="advocateModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="m-name"></h2>
+      <p id="m-bar"></p>
+      <p id="m-lic"></p>
+      <p id="m-year"></p>
+      <p id="m-phone"></p>
+      <p id="m-email"></p>
+      <p id="m-areaexpert"></p>
+      <p id="m-address"></p>
+      <button id="uploadCaseBtn" href="#" class="btn" onclick="uploadCase()">Upload Case</button>
+
+</form>
+
+
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/advocate_browse.js') }}"></script>
+</body>
+</html>

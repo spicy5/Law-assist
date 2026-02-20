@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Case Upload Form</title>
+    <link rel="stylesheet" href="../static/css/caseupload.css">
+</head>
+<body>
+
+  <div class="form-wrapper">
+    <form action="/adv_caseup" method="post">
+      <h1>CASE UPLOAD</h1>
+
+      <h2>Advocate Detail</h2>
+
+
+      <label for="bar_id">Bar ID</label>
+      <input type="text" id="bar_id" name="bar_id" value="{{bar_id}}" readonly>
+
+
+      <input type="hidden" name="username" value="{{ session['username'] }}">
+
+      <label for="source">Source</label>
+      <select type="text" id="source" name="source" required>
+        <option value="advocate">ADVOCATE</option>
+      </select>
+
+      <h2>Case File Information</h2>
+
+      <label for="case_title">Case Title</label>
+      <input type="text" id="case_title" name="case_title" required>
+
+      <label for="casetype">Case Type</label>
+      <select id="casetype" name="case_type" required>
+        <option value="criminal">CRIMINAL</option>
+        <option value="civil">CIVIL</option>
+        <option value="divorce">DIVORCE</option>
+      </select>
+
+      <label for="casedesc">Case Description</label>
+      <input type="textarea" id="casedesc" name="case_desc">
+
+      <div class="user-input-info">
+        <p style="color:#6a5232; font-weight:bold;">CASE PRIORITY</p>
+        <div class="radio-container">
+          <label for="high"><input type="radio" id="high" name="case_priority" value="high">HIGH</label>
+          <label for="medium"><input type="radio" id="medium" name="case_priority" value="medium">MEDIUM</label>
+          <label for="low"><input type="radio" id="low" name="case_priority" value="low">LOW</label>
+        </div>
+      </div>
+
+      <label for="evidence_url">Evidence URL</label>
+      <input type="text" id="evidence_url" name="evidence_url">
+
+      <input type="submit" value="Register">
+    </form>
+  </div>
+
+</body>
+</html>

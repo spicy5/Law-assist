@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Details</title>
+  <link rel="stylesheet" href="../static/css/viewcase.css">
+
+</head>
+
+<body>
+<a href='/dashboard2' class="btn">Home</a>
+
+  <h2>Case Details</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Advocate Name</th>
+        <th>Bar ID</th>
+        <th>Username</th>
+        <th>Case Title</th>
+        <th>Case Type</th>
+        <th>Case Description</th>
+        <th>Case Priority</th>
+        <th>Status</th>
+        <th>Submitted At</th>
+        <th>Reviwed At</th>
+        <th>Evidence</th>
+        <th> action </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in cases %}
+      <tr>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+        <td>{{ row[4] }}</td>
+        <td>{{ row[5] }}</td>
+        <td>{{ row[6] }}</td>
+        <td>{{ row[7] }}</td>
+        <td>{{ row[8] }}</td>
+        <td>{{ row[9] }}</td>
+        <td>{{ row[10] }}</td>
+        <td>{{ row[11] }}</td>
+
+        <td>
+          <a href="{{ url_for('handle_case_action', id=row[0], action='accept') }}" class="btn">ACCEPT</a><br><br>
+           <a href="{{ url_for('handle_case_action', id=row[0], action='reject') }}" class="btn" style="background-color:red;">REJECT</a><br>
+
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</body>
+
+</html>

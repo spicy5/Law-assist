@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LAW ASSIST</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/ambareesh.css">
+  <link rel="icon" href="/static/images/law-icon.png" type="image/x-icon">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="/static/images/law-icon.png" alt="Law Assist Logo">
+        <span>Law Assist</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li class="dropdown">
+          <a>Register ▾</a>
+          <div class="dropdown-menu">
+            <a href="/advocate_register">As Advocate</a>
+            <a href="/register">As Client</a>
+          </div>
+        </li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="#cases">Cases</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero-section">
+    <div class="content" data-aos="fade-up">
+      <h1>Welcome to Law Assist</h1>
+      <p>Simple legal management for clients and advocates</p>
+      <a href="/login" class="btn">Get Started</a>
+    </div>
+  </section>
+
+  <section id="about" class="about" data-aos="fade-left">
+    <h2>About</h2>
+    <p>
+      LawAssist is a lightweight case and client management system<br>
+      designed specifically for advocates for their daily legal activities.<br>
+      The system provides an organized way to track ongoing cases,<br>
+      manage client details, set hearing dates, and store legal documents securely.
+    </p>
+  </section>
+
+  <section id="contact" class="contact" data-aos="fade-right">
+    <h2>Contact Us</h2>
+    <p>Email: support@lawassist.in</p>
+    <p>Phone: +91-9876543210</p>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer class="about">
+    <p>&copy; 2025 Law Assist. All rights reserved.</p>
+  </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
+</html>

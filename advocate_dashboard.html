@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Law Assist</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../static/css/dash007.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-top">
+      <div class="profile">
+        <img src="#" alt="User" />
+        <div class="name">
+          {% if session.usertype == 'advocate' %}
+    <p>Welcome Advocate {{ session.username }}</p>
+{% else %}
+    <p>You are not an advocate.</p>
+{% endif %}
+        </div>
+        <div class="role"></div>
+      </div>
+
+        <div class="menu">
+         <a href="#" class="nav-link"><i class="fas fa-home"></i><span>Dashboard</span></a>
+         <a href="{{ url_for('edit_adv_profile') }}" class="nav-link"><i class="fas fa-user"></i><span>Profile</span></a>
+
+        <!-- Cases with submenu -->
+        <div class="submenu-group">
+          <a href="#" class="nav-link"><i class="fas fa-folder"></i><span>Case View</span></a>
+          <div class="submenu">
+              <a href='/advviewcase' class="nav-link">View Client Cases</a>
+              <a href="{{ url_for('adv_pending_cases') }}" class="nav-link">View Pending Cases</a>
+              <a href="{{ url_for('adv_ongoing_cases') }}" class="nav-link">View Ongoing Cases</a>
+              <a href="{{ url_for('adv_closed_cases') }}" class="nav-link">View Closed Cases</a>
+          </div>
+        </div>
+            <div class="submenu-group">
+          <a href="#" class="nav-link"><i class="fas fa-folder"></i><span>Case Management</span></a>
+          <div class="submenu">
+              <a href="{{ url_for('adv_caseup') }}" class="nav-link">Upload Case</a>
+              <a href="{{ url_for('adv_own_viewcase') }}" class="nav-link">Edit Case</a>
+          </div>
+        </div>
+      <div class="submenu-group">
+  <a href="#" class="nav-link"><i class="fas fa-file"></i><span>Documents</span></a>
+  <div class="submenu">
+    <a href="{{ url_for('adv_doc_cases') }}" class="nav-link">Upload Document</a>
+
+      <a href="{{ url_for('adv_replace_cases') }}" class="nav-link">Replace Document</a>
+  </div>
+</div>
+
+        <a href="#" class="nav-link"><i class="fas fa-calendar-alt"></i><span>Calendar</span></a>
+        <a href="#" class="nav-link"><i class="fas fa-cog"></i><span>Settings</span></a>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      <button class="btn" onclick="toggleDarkMode()">
+        <i class="fas fa-moon"></i>
+        <span>Dark Mode</span>
+      </button>
+      <button class="btn" onclick="logout()">
+
+        <a href="/logout" class="text">
+           <i class="fas fa-sign-out-alt"></i>
+          <span>Logout</span>
+          </a>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1>Welcome to Law Assist</h1>
+
+<div class="flash-container">
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <div class="flash">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+</div>
+
+
+
+    <p>"You’re not brave. Men are brave.<br> You say you want to help people, but you can barely hold back your power.<br> The world has been so caught up with what you can do, that no one has asked what you should do. And now...<br> now you think you can dictate what’s right. But I’m here to tell you something you need to hear..."<br>
+
+"Tell me, do you bleed?"<br>
+(pause)<br>
+"...You will.".</p>
+  </div>
+
+
+
+  <!-- JavaScript -->
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+
+<!--    function logout() {-->
+<!--      alert("You have been logged out.");-->
+<!--    }-->
+  </script>
+<!-- JavaScript -->
+<script>
+  setTimeout(() => {
+    const flashMessages = document.querySelectorAll('.flash');
+    flashMessages.forEach(msg => {
+      msg.style.opacity = '0';
+      setTimeout(() => msg.remove(), 500);  // Remove from DOM after fade
+    });
+  }, 2000);  // 2 seconds
+</script>
+
+</body>
+</html>
+
+</body>
+</html>

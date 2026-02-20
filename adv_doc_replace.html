@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Replace Document</title>
+  <link rel="stylesheet" href="../static/css/profile_update.css">
+</head>
+<body>
+
+<div class="form-wrapper">
+  <form method="post">
+    <h1><u>REPLACE DOCUMENT</u></h1>
+
+    <input type="hidden" name="doc_id" value="{{ document_id }}">
+
+    <label>CASE TYPE (USER)</label>
+    <select name="case_type" id="case_type" disabled>
+      {% if usertype == 'advocate' %}
+        <option value="advocate" selected>ADVOCATE</option>
+      {% elif usertype == 'client' %}
+        <option value="client" selected>CLIENT</option>
+      {% endif %}
+    </select>
+
+    <label for="document_title">DOCUMENT TITLE</label>
+    <input type="text" name="document_title" id="document_title" value="{{ document[0] }}" required>
+
+    <label for="document_url">DOCUMENT URL</label>
+    <input type="text" name="document_url" id="document_url" value="{{ document[1] }}" required>
+
+    <label for="file_type">FILE TYPE</label>
+    <input type="text" name="file_type" id="file_type" value="{{ document[2] }}" required>
+
+    <label for="is_confidential">IS CONFIDENTIAL</label>
+    <select name="is_confidential" id="is_confidential">
+      <option value="yes" {% if document[3] =='yes' %}selected{% endif %}>CONFIDENTIAL</option>
+      <option value="no" {% if document[3] =='no' %}selected{% endif %}>PUBLIC</option>
+    </select>
+
+    <input type="submit" value="Replace Document">
+  </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Case Upload Form</title>
+    <link rel="stylesheet" href="../static/css/caseupload.css">
+</head>
+<body>
+
+  <div class="form-wrapper">
+    <form method="post">
+      <h1><u>CASE DETAILS</u></h1>
+
+      <label>ADVOCATE NAME</label>
+      <input type="text" name="adv_name" value="{{client_case[1]}}">
+
+      <label>BAR ID</label>
+      <input type="text" name="bar_id" value="{{client_case[2]}}">
+
+      <label>CLIENT USERNAME</label>
+      <input type="text" name="username" value="{{client_case[3]}}">
+
+      <label>CASE TITLE</label>
+      <input type="text" name="case_title" value="{{client_case[4]}}">
+
+      <label>CASE TYPE</label>
+      <input type="text" name="case_type" value="{{client_case[5]}}">
+
+      <label>CASE DESCRIPTION</label>
+      <input type="text" name="case_desc" value="{{client_case[6]}}">
+
+      <label>CASE PRIORITY</label>
+      <input type="text" name="case_priority" value="{{client_case[7]}}">
+
+      <label>STATUS</label>
+      <input type="text" name="status" value="{{client_case[8]}}">
+
+      <label>EVIDENCE</label>
+      <input type="text" name="evidence_url" value="{{client_case[11]}}">
+
+      <label>SUBMITTED AT</label>
+      <input type="text" name="submitted_at" value="{{client_case[9]}}">
+
+      <label>REVIEWED AT</label>
+      <input type="text" name="reviewed_at" value="{{client_case[10]}}">
+
+      <input type="submit" value="Update Cases">
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Profile Update</title>
+  <link rel="stylesheet" href="../static/css/profile_update.css">
+</head>
+<body>
+
+  <div class="form-wrapper">
+    <form method="post" enctype="multipart/form-data">
+      <h1><u>PROFILE</u></h1>
+
+      <label>ADVOCATE PHOTO</label>
+      <img src="{{ url_for('advocate_photo') }}" alt="Profile Photo" width="150" height="150" style="border-radius: 50%; margin-bottom: 10px;">
+      <input type="file" name="adv_photo">
+
+      <label>ADVOCATE NAME</label>
+      <input type="text" name="adv_name" value="{{ advocate[1] }}" required>
+
+      <label>DOB</label>
+      <input type="text" name="dob" value="{{ advocate[2] }}" required>
+
+      <label>PHONE</label>
+      <input type="text" name="phone" value="{{ advocate[3] }}" required>
+
+      <label>EMAIL ID</label>
+      <input type="email" name="email" value="{{ advocate[4] }}" required>
+
+      <label>GENDER</label>
+      <input type="text" name="gender" value="{{ advocate[5] }}" required>
+
+      <label>AGE</label>
+      <input type="text" name="age" value="{{ advocate[6] }}" required>
+
+      <label>BAR ID</label>
+      <input type="text" name="barid" value="{{ advocate[7] }}" required>
+
+      <label>LICENCE NUMBER</label>
+      <input type="text" name="licnum" value="{{ advocate[8] }}" required>
+
+      <label>YEAR OF PRACTICE</label>
+      <input type="text" name="year" value="{{ advocate[9] }}" required>
+
+      <label>COURT ADDRESS</label>
+      <input type="text" name="court_address" value="{{ advocate[13] }}" required>
+
+      <label>PRACTICE DIVISION</label>
+      <input type="text" name="practice_division" value="{{ advocate[14] }}" required>
+
+      <input type="submit" value="Update Profile">
+    </form>
+  </div>
+
+</body>
+</html>

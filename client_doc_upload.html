@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Adv_Doc_Upload</title>
+    <link rel="stylesheet" href="../static/css/profile_update.css">
+</head>
+<body>
+
+  <div class="form-wrapper">
+    <form method="post">
+      <h1><u>DOCUMENTS</u></h1>
+
+        <input type="hidden" name="case_id" value="{{ case_id }}">
+        <input type="hidden" name="source" value="{{ source }}">
+
+<label>CASE TYPE(USER)</label>
+<select name="case_type" id="case_type">
+  {% if usertype == 'advocate' %}
+    <option value="advocate" selected>ADVOCATE</option>
+  {% elif usertype == 'client' %}
+    <option value="client" selected>CLIENT</option>
+  {% else %}
+    <option value="#">..SELECT..</option>
+    <option value="client">CLIENT</option>
+    <option value="advocate">ADVOCATE</option>
+  {% endif %}
+</select>
+
+
+      <label for="document_title">DOCUMENT TITLE</label>
+      <input type="text" name="document_title" id="document_title">
+
+      <label for="document_url">DOCUMENT URL</label>
+      <input type="text" name="document_url" id="document_url" >
+
+      <label for="file_type">FILE TYPE</label>
+      <input type="text" name="file_type" id="file_type">
+
+      <label for="is_confidential">IS CONFIDENTIAL</label>
+<select name="is_confidential" id="is_confidential">
+  <option value="true">CONFIDENTIAL</option>
+  <option value="false">PUBLIC</option>
+</select>
+
+      <input type="submit" value="Upload Document">
+    </form>
+  </div>
+
+</body>
+</html>
