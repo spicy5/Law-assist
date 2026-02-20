@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../images/wmremove-transformed.jpeg') center no-repeat;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    background: rgba(237, 232, 245, 0.85); 
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(4, 22, 37, 0.2);
+    backdrop-filter: blur(6px);
+}
+
+.form-title {
+    text-align: center;
+    font-size: 30px;
+    color: #3d52a0; 
+    margin-bottom: 20px;
+}
+
+.main-user-info,
+.main-user-info07 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.user-input-info {
+    flex: 0 0 48%;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-input-info label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #5c6bc0; 
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.user-input-info input[type="text"],
+.user-input-info input[type="password"],
+.user-input-info input[type="email"],
+.user-input-info input[type="tel"],
+.user-input-info input[type="date"],
+.user-input-info select,
+.user-input-info textarea {
+    width: 100%; 
+    padding: 10px;
+    border: 1px solid #b9b3d3;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #f1ecfa; 
+    color: #3d52a0;
+}
+.user-input-info input,
+.user-input-info select,
+.user-input-info textarea {
+    height: 40px;
+}
+
+
+.user-input-info textarea {
+    resize: vertical;
+    height: 50px;
+}
+
+.user-input-info input[type="radio"] {
+    width: auto;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+}
+
+.radio-container input[type="radio"] {
+    margin-right: 5px;
+}
+
+.radio-container label {
+    margin-right: 10px;
+    color: #5c6bc0;
+}
+
+.form-submit {
+    margin-top: 20px;
+}
+
+.form-submit input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    background-color: #e7b331;
+    color: #3d3d3d;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.form-submit input[type="submit"]:hover {
+    background-color: #d39f23; 
+}
+
+.forgot-password {
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: right;
+    display: inline-block;
+    color: #3d52a0;
+    text-decoration: none;
+}
+
+.register-text {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #3d52a0;
+}
+.home-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background-color: #5c6bc0;
+    color: #fff;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #3d52a0;
+}
+

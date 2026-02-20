@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0e0e0e url('https://i.pinimg.com/736x/c3/12/8c/c3128c5b0737e03ae8a61f48bad769e0.jpg') no-repeat center center/cover;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  max-width: 800px;
+  height: 85vh;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6), inset 1px 1px 5px rgba(255, 255, 255, 0.04);
+}
+
+.left, .right {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left {
+  background: rgba(255, 255, 255, 0.03);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.left h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.left p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.right {
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+form {
+  width: 100%;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+form h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.neumorphic-input {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 1rem;
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.6), inset -1px -1px 2px rgba(255, 255, 255, 0.05);
+}
+
+.neumorphic-input::placeholder {
+  color: #aaa;
+}
+
+.role-options {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.role-option {
+  position: relative;
+}
+
+.role-option input[type=radio] {
+  display: none;
+}
+
+.role-option label {
+  padding: 0.5rem 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #ccc;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.4), inset -1px -1px 2px rgba(255, 255, 255, 0.04);
+  transition: 0.3s ease;
+}
+
+.role-option input[type=radio]:checked + label {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 2px #00bfff;
+}
+
+.neumorphic-button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6), inset 1px 1px 2px rgba(255, 255, 255, 0.05);
+  transition: 0.3s ease;
+}
+
+.neumorphic-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+form p {
+  font-size: 0.85rem;
+  text-align: center;
+  color: #aaa;
+}
+
+form a {
+  color: #66ccff;
+  text-decoration: none;
+}
+
+form a:hover {
+  text-decoration: underline;
+}
+.home-button-container{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+
+}
+
+.home-button {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 1rem;
+  box-shadow: inset 8px 8px 16px rgba(0, 0, 0, 0.6), inset -12px -12px 22px rgba(255, 255, 255, 0.05);
+
+
+}
+.home-button:hover;{
+     box-shadow: inset 8px 8px 15px #141414,
+                 inset -8px -8px 15px #323232;
+     transform: scale(1.06);
+
+}
+
+.home-logo {
+  width: 32px;
+  height: 32px;
+  filter: brightness(100%) invert(100%);
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+  .left, .right {
+    flex: 1 1 100%;
+    border: none;
+  }
+}
